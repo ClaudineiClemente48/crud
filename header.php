@@ -10,10 +10,10 @@
     <h1>Sistema de Cabeleireiro ✂🧒</h1>
     <nav>
         <a href="servicos-listar.php">Serviços</a>
-        <a href="cliente-listar.php">Clientes</a>
+        <a href="clientes-listar.php">Clientes</a>
         <a href="agenda-listar.php">Agenda</a>
         <a href="produtos-listar.php">Produtos</a>
-        <a href="funcionario-listar.php">Funcionários</a>
+        <a href="funcionarios-listar.php">Funcionários</a>
         <a href="fornecedores-listar.php">Fornecedores</a>
         
         
