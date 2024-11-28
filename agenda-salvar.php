@@ -9,8 +9,8 @@ $hora = $_POST["hora"];
 $servico = $_POST["servico"];
 
 //montar um sql insert
-$sql = "insert into agenda(, descricao, preco, categoria)
-values ('$servico', '$descricao', '$preco', '$categoria')";
+$sql = "insert into agenda(funcionario, data, hora, servico)
+values ('$funcionario', '$data', '$hora', '$servico')";
 
 //incluir um arquivo de conexao
 include "conexao.php";
@@ -22,6 +22,6 @@ $resultado = mysqli_query($conexao, $sql);
 mysqli_close($conexao);
 
 //redirecionar para a página listar
-header("Location: servicos-listar.php");
+header("Location: agenda-listar.php");
 
 ?>
