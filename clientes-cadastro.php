@@ -1,15 +1,17 @@
-
-<?php include "header.php";?>
+<?php 
+?>
 <main>
-    <h1>Adicionar novos clientes</h1>
+
+    <h2>Cadastre-se</h2>
+
     <form method="post" action="clientes-salvar.php">
-    
-       <label>Nome:<input name="nome"></label><br>
-       <label>Idade:<input name="idade"></label><br>
-       <label>Endereco:<input name="endereco"></label><br>
-       <label>Telefone:<input name="telefone"></label><br>
-       
-       <button type="submit">Salvar</button>
+        <label>Nome: <input name="nome"></label> <br>
+        <label>Telefone: <input name="telefone"></label> <br>
+        <label>Email: <input name="email"></label> <br>
+        <label>Senha: <input name="senha"></label> <br>
+
+        <button type="submit">Salvar</button>
     </form>
 </main>
+
 <?php include "footer.php"?>

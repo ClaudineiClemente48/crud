@@ -1,28 +1,22 @@
 <?php
-//requisitar dados formulario
-$nome = $_POST["nome"];
+    //incluir o arquivo de conexão 
+    include "conexao.php";
 
-$idade = $_POST["idade"];
+    //requisição de dados do formulário
+    $nome = $_POST["nome"];
+    $telefone = $_POST["telefone"];
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
 
-$endereco = $_POST["endereco"];
+    //montar um sql de insert 
+    $sql = "insert into clientes(nome, telefone, email, senha) values('$nome', '$telefone', '$email', '$senha')";
 
-$telefone = $_POST["telefone"];
+    //executar o sql insert no BD
+    $resultado = mysqli_query($conexao, $sql);
 
-//montar um sql insert
+    //fechar a conexão
+    mysqli_close($conexao);
 
-$sql = "insert into clientes(nome, idade, endereco, telefone)
-values ('$nome', '$idade', '$endereco', '$telefone')";
-
-//incluir um arquivo de conexao
-include "conexao.php";
-
-//executar o sql insert no BD
-$resultado = mysqli_query($conexao, $sql);
-
-//fechar conexao
-mysqli_close($conexao);
-
-//redirecionar para a página listar
-header("Location: clientes-listar.php");
-
+    //redirecionar para a página iniciar
+    header("location: index.html");
 ?>

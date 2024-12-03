@@ -1,20 +1,19 @@
 <?php
-//requisitar os dados
-$id = $_GET['id'];
+    //requisitar os dados
+    $id = $_GET["id"];
 
-//montar um sql de delete
-$sql = "delete from clientes where id = $id";
+    //montar sql de delete
+    $sql = "delete from clientes where id = $id";
 
-//incluir o arquivo de conexão
-include "conexao.php";
+    //incluir o arquivo de conexão
+    include "conexao.php";
 
-//executar o sql delete no BD
-$resultado = mysqli_query($conexao, $sql);
+    //executar o sql delete no BD
+    $resultado = mysqli_query($conexao, $sql);
 
-//fechar a coxeão
-mysqli_close($conexao);
+    //fechar a conexão
+    mysqli_close($conexao);
 
-//redirecionar para a página listar
-header("Location: clientes-listar.php");
-
+    //redirecionar para a página listar
+    header("Location: clientes-listar.php");
 ?>

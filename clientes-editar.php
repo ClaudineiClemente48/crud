@@ -1,32 +1,33 @@
-<?php include "header.php"; ?>
-
+<?php 
+    include "header.php" ;
+?>
 <?php
-$id = $_GET['id'];
-$sql = "select * from clientes where id = $id";
-$clientes = $nome = $idade = $endereco = $telefone = "";
+    include "conexao.php";
+    $id = $_GET["id"];
+    $sql = "select * from clientes where id = $id";
+    $nome = $telefone = $email = $senha = "";
 
-include "conexao.php";
-$resultado = mysqli_query($conexao, $sql);
-while($linha = mysqli_fetch_assoc($resultado)){
-    $nome = $linha['nome'];
-    $idade = $linha['idade'];
-    $endereco = $linha['endereco'];
-    $telefone = $linha['telefone'];
-}
-
-mysqli_close($conexao);
-
+    $resultado = mysqli_query($conexao, $sql);
+    while($linha = mysqli_fetch_assoc($resultado)){
+        $nome = $linha['nome'];
+        $telefone = $linha['telefone'];
+        $email = $linha['email'];
+        $senha = $linha['senha'];
+    }
+    mysqli_close($conexao);
 ?>
 <main>
-    <h2>Editar clientes</h2>
-    <form method="post" action="clientes-atualizar.php?id=<?=$id;?>">
-        <label>Nome:<input name="nome" value="<?=$nome;?>"></label> <br>
-        <label>Idade: <input name="idade" value="<?=$idade;?>"></label> <br>
-        <label>Endereco: <input name="endereco" value="<?=$endereco;?>"></label> <br>
-        <label>Telefone: <input name="telefone" value="<?=$telefone;?>"></label> <br>
 
-        <button type="submit">Salvar</button>
+    <h2>Editar serviço</h2>
+    <form method="post" action="nome-atualizar.php?id=<?=$id;?>">
+        <label>Nome: <input name="nome" value="<?=$nome;?>"></label> <br>
+        <label>Telefone: <input name="telefone"  value="<?=$telefone;?>"></label> <br>
+        <label>Email: <input name="email"  value="<?=$email;?>"></label> <br>
+        <label>Senha: <input name="senha"  value="<?=$senha;?>"></label> <br>
+
+        <button type="submit">Editar</button>
     </form>
-</main>
 
-<?php include "footer.php"; ?>
+
+</main>
+<?php include "footer.php"?>
